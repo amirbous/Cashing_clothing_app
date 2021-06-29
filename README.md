@@ -1,5 +1,5 @@
 # Cashing_clothing_app
-applicabe, real life, cashing system application. Built around a clothes local shop.
+applicabe, real life, cashing system application. Built around a clothing itemss local shop.
 
  Concept:
  this app is suited and created for a local clothing items shop.
