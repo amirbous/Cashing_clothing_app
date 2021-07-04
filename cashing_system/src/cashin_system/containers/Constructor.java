@@ -9,14 +9,6 @@ import cashing_system.connect.MySQLConnection;
 import cashing_system.processing.ActionHandler;
 
 public class Constructor {
-	ActionListener action = new ActionListener() {
-		
-		
-		public void actionPerformed(ActionEvent arg0) {
-			
-			
-		}
-	};
 	
 	public static void main(String[] args) {
 		

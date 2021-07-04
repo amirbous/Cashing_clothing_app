@@ -52,7 +52,6 @@ public class frmLogin extends JFrame{
 	}
 
 	
-
 	
 
 }

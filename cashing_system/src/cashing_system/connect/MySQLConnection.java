@@ -1,38 +1,51 @@
-package cashing_system.connect;
 
+package cashing_system.connect;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class MySQLConnection {
-	
-		public static Connection getConnection() {
+	static String sql_user;
+	static String sql_pass;
+	private static Scanner x;
+	public static void read_data() {
+	try {
+		
+		x = new Scanner(new File("files/connect_data"));
+		while(x.hasNext()) {
+			sql_user = x.next();
+			sql_pass = x.next();
 			
-			
-			Connection con = null;
-			try {
-				String driver = "com.mysql.cj.jdbc.Driver";
-				String url = "jdbc:mysql://localhost:3306/cashing_system?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
-				String user = "bouslama_amir";
-				String password = "!Raed@bouslama1995";
-				
-				Class.forName(driver);
-				con = DriverManager.getConnection(url , user , password);
-				
-				
-				
-			}
-			catch(ClassNotFoundException e) {
-				
-				e.printStackTrace();
-			}
-			catch(SQLException e) {
-				e.printStackTrace();
-			}
-			return con;
 		}
 	}
-
-
+	catch(Exception e) {
+		System.out.println("cant find file");
+	}
+		
+	}
+	public static Connection getConnection() {
+		read_data();
+		
+		Connection con = null;
+		try {
+			String driver = "com.mysql.cj.jdbc.Driver";
+			String url = "jdbc:mysql://localhost:3306/cashing_system?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+			String user = sql_user;
+			String password = sql_pass;
+			
+			Class.forName(driver);
+			con = DriverManager.getConnection(url , user , password);
+			
+			
+			
+		}
+		catch(ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+}
