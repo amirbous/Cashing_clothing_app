@@ -13,3 +13,5 @@ applicabe, real life, cashing system application. Built around a clothing itemss
  day#1: creating simple gui and interface components
         working on local server and sql connectivity
         simple planning and mapping of inter_relational classes and backend.
+ day#2: imiplementing sql
+        application access to data and interaction app-database.
